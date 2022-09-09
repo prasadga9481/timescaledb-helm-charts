@@ -418,15 +418,17 @@ fullWalPrevention:
     readWriteFreePercent: 8
     readWriteFreeMB: 128
 
-resources: {}
+resources:
   # If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  limits:
+    cpu: 100m
+    memory: 128Mi
+    hugepages-1Gi: 2Gi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+    hugepages-1Gi: 2Gi
 
 sharedMemory:
   # By default Kubernetes only provides 64MB to /dev/shm
